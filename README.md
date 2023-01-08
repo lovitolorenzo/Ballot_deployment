@@ -1,16 +1,24 @@
-# Lesson 8 - Scripts for Ballot.sol and events
+# Scripts for Ballot.sol and events
+
+## Purpose
+
+- This project's target is interact with Ballot.sol in a such way to **_deploy and build its back end_**.
+
 ## Using scripts to automate operations
-* Running a script with yarn and node, ts-node and/or hardhat
-* Ballot deployment  script
-* Passing arguments
-* Passing variables to the deployment script
-* Environment files
-* Providers
-* Connecting to a testnet with a RPC Provider
-* Running scripts on chain
-* Script for giving voting rights to a given address
-* Dealing with transactions in scripts
+
+- Running a script with yarn and node, ts-node and/or hardhat
+- Ballot deployment script
+- Passing arguments
+- Passing variables to the deployment script
+- Environment files
+- Providers
+- Connecting to a testnet with a RPC Provider
+- Running scripts on chain
+- Script for giving voting rights to a given address
+- Dealing with transactions in scripts
+
 ### References
+
 https://hardhat.org/hardhat-runner/docs/guides/typescript#running-your-tests-and-scripts-directly-with--ts-node
 
 https://nodejs.org/docs/latest/api/process.html#processargv
@@ -36,27 +44,36 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });</code></pre>
+
 ### Running scripts
+
 ```
 yarn hardhat run .\scripts\Deployment.ts
 ```
+
 ### Running scripts with arguments
+
 ```
 yarn run ts-node --files .\scripts\Deployment.ts "arg1" "arg2" "arg3
 ```
 
 ## Events with solidity
-* Event syntax
-* Event storage
-* Event indexing
-* Topics and filters
-* Transaction structure
-* State changes with events
+
+- Event syntax
+- Event storage
+- Event indexing
+- Topics and filters
+- Transaction structure
+- State changes with events
+
 ### References
+
 https://docs.soliditylang.org/en/latest/contracts.html#events
 
 https://dev.to/hideckies/ethers-js-cheat-sheet-1h5j
+
 ### Code reference
+
 <pre><code>    event NewVoter(address indexed voter);
 
     event Delegated(
@@ -74,12 +91,17 @@ https://dev.to/hideckies/ethers-js-cheat-sheet-1h5j
         uint256 weight
     );
 </code></pre>
+
 ## Watching for events in tests
-* Event syntax with Hardhat Chai Matchers
-* Triggering an event
-* Checking arguments
+
+- Event syntax with Hardhat Chai Matchers
+- Triggering an event
+- Checking arguments
+
 ### References
+
 https://hardhat.org/hardhat-chai-matchers/docs/overview#events
+
 ### Code reference
 
 <pre><code>    it("triggers the NewVoter event with the address of the new voter", async function () {
@@ -91,13 +113,15 @@ https://hardhat.org/hardhat-chai-matchers/docs/overview#events
 </code></pre>
 
 ## Watching for events using a provider
-* Event syntax for Ethers.js library
-* Filters, EventFilters and topics
-* Event arguments
-* Event listeners and memory usage
-* Async logic
+
+- Event syntax for Ethers.js library
+- Filters, EventFilters and topics
+- Event arguments
+- Event listeners and memory usage
+- Async logic
 
 ### References
+
 https://docs.ethers.io/v5/concepts/events/
 
 https://docs.ethers.io/v5/api/contract/contract/#Contract--events
@@ -124,13 +148,3 @@ https://docs.ethers.io/v5/api/providers/types/#providers-EventFilter
     console.log({ log });
   });
 </code></pre>
-
-# Homework
-* Create Github Issues with your questions about this lesson
-* Read the references
-
-# Weekend Project
-* Form groups of 3 to 5 students
-* Develop and run scripts for “Ballot.sol” within your group to give voting rights, casting votes, delegating votes and querying results
-* Write a report with each function execution and the transaction hash, if successful, or the revert reason, if failed
-* Submit your code in a github repository in the form
