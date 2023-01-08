@@ -2,7 +2,7 @@
 
 ## Purpose
 
-- This project's target is interact with Ballot.sol in a such way to **_deploy and build its back end_**.
+- This project's target is purely to practicing and illustrative, and in scripts/Deployment.ts it interacts with Ballot.sol in a such way to **_deploy and build its back end_**.
 
 ## Using scripts to automate operations
 
